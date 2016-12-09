@@ -1,24 +1,46 @@
 ﻿open Mono.Cecil
 open Mono.Cecil.Cil
 
-type EdgeKind = Calls | Inherits | Offers | Accepts | Holds
+type EdgeKind = Calls | Implements | Inherits | Offers | Accepts | Returns | Holds
 
-type Edge = 
+type DependencyEdge = 
   { kind : EdgeKind 
-    target : TypeNode }
+    target : TypeReference }
+
+type WeightedKind = 
+  { kind : EdgeKind
+    weight : int }
+
+type TargetDependency = 
+  { target : TypeReference
+    kinds : WeightedKind list }
+
+type TypeDependencies =
+  { source : TypeDefinition
+    dependencies : TargetDependency list }
+
+//type Dependency = 
+//  { source : TypeDefinition
+//    kind : EdgeKind
+//    target : TypeReference }
+
+type Edge<'T> = 
+  { kind : EdgeKind 
+    tgt : 'T }
 and 
   TypeNode = 
   { name : string
     ``namespace`` : string 
     typeDef : TypeDefinition
-    edges : Edge list }
+    edges : Edge<TypeNode> list }
 
-let typeReferredByInstruction (inst : Instruction) : Edge option = 
+let typeReferredByInstruction (inst : Instruction) : Edge<string> option = 
    match inst.OpCode.Code with
    | Code.Call -> 
      match inst.Operand with
      | :? GenericInstanceMethod as gim -> 
        printfn "generic instance method"
+       //gim.GenericArguments |> printfn 
      | :? MethodDefinition as mdef ->
        printfn "method definition"
      | :? MethodReference as mref ->
@@ -29,37 +51,68 @@ let typeReferredByInstruction (inst : Instruction) : Edge option =
      ()
    None
 
-let typesReferredByField (fieldDef : FieldDefinition) (typeNodes : TypeNode list) : Edge list = 
+let rec typesFromTypeReference (typeRef : TypeReference) : TypeReference list = 
+  match typeRef with
+     | :? GenericInstanceType as genericInstanceType -> 
+       // printfn "generic instance type with element type %s" genericInstanceType.ElementType.FullName
+       [ typeRef ]
+     | :? ArrayType as arrayType ->
+       // Unwrap array
+       typesFromTypeReference arrayType.ElementType
+     | :? TypeDefinition as typeDefinition ->
+       //printfn "type definition"
+       [ typeRef ]
+     | _ ->
+       [ typeRef ]
+
+let typesReferredByField (fieldDef : FieldDefinition) : DependencyEdge list = 
   let fieldType = fieldDef.FieldType
+  fieldType |> typesFromTypeReference |> List.map (fun tgt -> { kind = Holds; target = tgt })
+
+let typesReferredByParameter (p : ParameterDefinition) : DependencyEdge list = 
+  let typeRefs = typesFromTypeReference p.ParameterType
+  typeRefs |> List.map (fun tr -> { kind = Accepts; target = tr})
+
+let typesReferredByMethodParameters (methodDef : MethodDefinition) : DependencyEdge list = 
+  methodDef.Parameters |> Seq.collect (fun p -> typesReferredByParameter p) |> Seq.toList
+
+let typesReferredByMethodReturnType (methodDef : MethodDefinition) : DependencyEdge list = 
+  methodDef.ReturnType |> typesFromTypeReference |> List.map (fun tr -> { kind = Returns; target = tr })
+
+let typesReferredByMethodBody (methodDef : MethodDefinition) : DependencyEdge list = 
+  let flops = methodDef.Body.Instructions |> Seq.map (fun inst -> typeReferredByInstruction inst) |> Seq.toList
   []
 
-let typesReferredByMethod (methodDef : MethodDefinition) (typeNodes : TypeNode list) : Edge list = 
-  printfn "types referred by method."
-  printfn "has body? %s" <| if methodDef.HasBody then "true" else "false"
-  let methodBody = methodDef.Body
-  let lol = 
-    if methodDef.HasBody then
-      methodBody.Instructions |> Seq.map (fun inst -> typeReferredByInstruction inst) |> Seq.toList
-    else
-      List.empty
-  let returnType = methodDef.ReturnType
+let typesReferredByMethod (methodDef : MethodDefinition) : DependencyEdge list = 
+  let fromParameters = typesReferredByMethodParameters methodDef
+  let fromReturnType = typesReferredByMethodReturnType methodDef
+  let fromMethodBody = if methodDef.HasBody then typesReferredByMethodBody methodDef else []
+  let result = fromParameters @ fromReturnType @ fromMethodBody
+  result
+
+let collapseEdges (edges : DependencyEdge list) : WeightedKind list = 
+  edges |> List.groupBy (fun e -> e.kind) |> List.map (fun (kind, group) -> { kind = kind; weight = group |> List.length })
+
+let typesReferredByClass (classDef : TypeDefinition) : TypeDependencies =
+  let fromInterfaces : DependencyEdge list = 
+    classDef.Interfaces 
+    |> Seq.collect (fun interfaceRef -> [ { kind = EdgeKind.Implements; target = interfaceRef } ] ) 
+    |> Seq.toList
+  let fromBaseClass : DependencyEdge list = 
+    match classDef.BaseType with
+    | null -> []
+    | t -> typesFromTypeReference t |> List.map (fun tgt -> { kind = EdgeKind.Inherits; target = tgt })
+  let fromMethods = classDef.Methods |> Seq.collect (fun methodDef -> typesReferredByMethod methodDef) |> Seq.toList
+  let fromFields = classDef.Fields |> Seq.collect (fun fieldDef -> typesReferredByField fieldDef) |> Seq.toList
+  let edges = fromInterfaces @ fromBaseClass @ fromMethods @ fromFields
+  let deps = edges |> List.groupBy (fun edge -> edge.target.FullName) |> List.map (fun (tgt, edges) -> { target = (edges |> List.head |> (fun it -> it.target)); kinds = collapseEdges edges })
+  { source = classDef
+    dependencies = deps }
+
+let typesReferredByInterfaceDefinition (interfaceDef : TypeDefinition) : Edge<string> list = 
+  let fromMethods = interfaceDef.Methods |> Seq.collect (fun methodDef -> typesReferredByMethod methodDef) |> Seq.toList
+  let fromFields = interfaceDef.Fields |> Seq.collect (fun fieldDef -> typesReferredByField fieldDef) |> Seq.toList
   []
-
-let typesReferredByInterfaceReference (interfaceRef : TypeReference) (typeNodes : TypeNode list) : Edge list = 
-  []
-
-let typesReferredByClass (classDef : TypeDefinition) (typeNodes : TypeNode list) : Edge list =
-  printfn "!!!types referred by class"
-  let fromInterfaces = classDef.Interfaces |> Seq.collect (fun interfaceRef -> typesReferredByInterfaceReference interfaceRef typeNodes) |> Seq.toList
-  printfn "class %s implements %d interfaces" classDef.Name fromInterfaces.Length
-  let fromMethods = classDef.Methods |> Seq.collect (fun methodDef -> typesReferredByMethod methodDef typeNodes) |> Seq.toList
-  let fromFields = classDef.Fields |> Seq.collect (fun fieldDef -> typesReferredByField fieldDef typeNodes) |> Seq.toList
-  fromInterfaces @ fromMethods @ fromFields
-
-let typesReferredByInterfaceDefinition (interfaceDef : TypeDefinition) (typeNodes : TypeNode list) : Edge list = 
-  let fromMethods = interfaceDef.Methods |> Seq.collect (fun methodDef -> typesReferredByMethod methodDef typeNodes) |> Seq.toList
-  let fromFields = interfaceDef.Fields |> Seq.collect (fun fieldDef -> typesReferredByField fieldDef typeNodes) |> Seq.toList
-  fromMethods @ fromFields
 
 let (|ClassDefinition|_|) (typeDef : TypeDefinition) =
    if typeDef.IsClass then Some (ClassDefinition typeDef) else None
@@ -70,10 +123,10 @@ let (|InterfaceDefinition|_|) (typeDef : TypeDefinition) =
 let (|EnumDefinition|_|) (typeDef : TypeDefinition) =
    if typeDef.IsEnum then Some (EnumDefinition typeDef) else None
 
-let getTypeDependencies (typeDef : TypeDefinition) (typeNodes : TypeNode list) : Edge list = 
+let getTypeDependencies (typeDef : TypeDefinition) : Edge<string> list = 
    match typeDef with
    | ClassDefinition cd -> []
-   | InterfaceDefinition id -> typesReferredByInterfaceDefinition id typeNodes
+   | InterfaceDefinition id -> typesReferredByInterfaceDefinition id
    | EnumDefinition ed -> []
    | _ -> []
 
@@ -95,7 +148,13 @@ let main argv =
     classes |> Seq.iter (fun it -> printfn "%s" it.Name)
     printfn ""
 
-    let foo = classes |> Seq.map (fun cd -> typesReferredByClass cd []) |> Seq.toList
+    let foo = classes |> Seq.map (fun cd -> typesReferredByClass cd) |> Seq.toList
+
+    let formatWeightedKind wk = 
+      match wk with
+      | {kind = k; weight = w} -> (k, w)
+
+    foo |> List.iter (fun it -> printfn "type definition: %A" it.source; it.dependencies |> List.iter (fun d -> printfn " -> %s %A" d.target.FullName (d.kinds |> List.map (fun k -> formatWeightedKind k))))
 
     printfn "lol %d" foo.Length
 
