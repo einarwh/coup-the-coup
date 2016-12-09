@@ -1,7 +1,7 @@
 ﻿open Mono.Cecil
 open Mono.Cecil.Cil
 
-type EdgeKind = Calls | Implements | Inherits | Offers | Accepts | Returns | Holds | Annotates | Exposes
+type EdgeKind = Calls | Implements | Inherits | Offers | Accepts | Returns | Holds | Annotates | Exposes | Creates
 
 type DependencyEdge = 
   { kind : EdgeKind 
@@ -56,10 +56,29 @@ let typesReferredByCallInstruction (inst : Instruction) : DependencyEdge list =
   | Some declaringType -> declaringType |> typesFromTypeReference |> List.map (fun tgt -> { kind = Calls; target = tgt })
   | None -> []
 
+let typesReferredByNewobjInstruction (inst : Instruction) : DependencyEdge list = 
+  let maybeDeclaringType : TypeReference option = 
+    match inst.Operand with
+    | :? GenericInstanceMethod as gim -> 
+      Some gim.DeclaringType
+    | :? MethodDefinition as mdef ->
+      let tref = mdef.DeclaringType :> TypeReference
+      Some tref
+    | :? MethodReference as mref ->
+      Some mref.DeclaringType 
+    | _ ->
+      printfn "something entirely different or similar?"
+      None
+  match maybeDeclaringType with
+  | Some declaringType -> declaringType |> typesFromTypeReference |> List.map (fun tgt -> { kind = Creates; target = tgt })
+  | None -> []
+
 let typeReferredByInstruction (inst : Instruction) : DependencyEdge list = 
    match inst.OpCode.Code with
    | Code.Call -> 
      typesReferredByCallInstruction inst
+   | Code.Newobj ->
+     typesReferredByNewobjInstruction inst
    | _ ->
      []
 
@@ -142,19 +161,29 @@ let (|InterfaceDefinition|_|) (typeDef : TypeDefinition) =
 let (|EnumDefinition|_|) (typeDef : TypeDefinition) =
    if typeDef.IsEnum then Some (EnumDefinition typeDef) else None
 
+let stripDots (name : string) : string = 
+  name.Replace(".", "")
+
+let stripTick (name : string) : string = 
+  name.Replace("`", "")
+
+let dotFriendly (name : string) : string = 
+  name |> stripDots |> stripTick
+
 let getLinesForType (typeDeps : TypeDependencies) = 
   match typeDeps with
   | { source = s; dependencies = deps } ->
-    let edges = deps |> List.map (fun it -> sprintf "%s -> %s;" s.FullName it.target.FullName)
-    let shape = if s.IsInterface then "ellipse" else "box"
-    let node = sprintf "%s [label = \"%s\" shape = \"%s\"];" s.FullName s.Name shape
+    let srcName = s.FullName |> dotFriendly
+    let edges = deps |> List.map (fun it -> sprintf "%s -> %s;" srcName it.target.FullName |> dotFriendly)
+    let shape = if s.IsEnum then "diamond" else if s.IsInterface then "ellipse" else "box"
+    let node = sprintf "%s [label = \"%s\" shape = \"%s\"];" srcName (s.Name |> dotFriendly) shape
     node :: edges
 
 [<EntryPoint>]
 let main argv = 
     let dll = argv.[0]
     let asm = AssemblyDefinition.ReadAssembly(dll)
-    let types = asm.MainModule.Types
+    let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
 
     //types |> Seq.iter (fun typeDef -> printfn "%A" typeDef.Name; typeDef.CustomAttributes |> Seq.iter (fun attr -> printfn "  -> %A" attr.AttributeType.Name))
     let allClasses = types |> Seq.filter (fun typeDef -> typeDef.IsClass) |> Seq.toList
@@ -185,6 +214,8 @@ let main argv =
 
     let interfaceTypeDependencies = interfaces |> Seq.map (fun def -> typesReferredByInterface def) |> Seq.toList
 
+    let enumTypeDependencies = enums |> Seq.map (fun def -> { source = def; dependencies = [] }) |> Seq.toList
+
     let formatWeightedKind wk = 
       match wk with
       | {kind = k; weight = w} -> (k, w)
@@ -199,7 +230,7 @@ let main argv =
       interfaceTypeDependencies 
       |> List.map (fun { source = s; dependencies = deps } -> { source = s; dependencies = deps |> List.filter (fun d -> typeNames |> List.contains d.target.FullName) |> List.filter (fun d -> not (d.target.FullName.Equals(s.FullName)) ) })
 
-    let allTypeDeps = filteredClassTypeDependencies @ filteredInterfaceTypeDependencies
+    let allTypeDeps = filteredClassTypeDependencies @ filteredInterfaceTypeDependencies @ enumTypeDependencies
     let lines = allTypeDeps |> List.collect (fun typeDef -> typeDef |> getLinesForType)
     let indentedLines = lines |> List.map (fun line -> sprintf "  %s" line)
     let oneBigLine = indentedLines |> String.concat "\n"
