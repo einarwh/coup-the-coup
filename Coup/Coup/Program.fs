@@ -77,6 +77,10 @@ let typeReferredByInstruction (inst : Instruction) : DependencyEdge list =
    match inst.OpCode.Code with
    | Code.Call -> 
      typesReferredByCallInstruction inst
+   | Code.Calli -> 
+     typesReferredByCallInstruction inst
+   | Code.Callvirt -> 
+     typesReferredByCallInstruction inst
    | Code.Newobj ->
      typesReferredByNewobjInstruction inst
    | _ ->
@@ -179,11 +183,26 @@ let getLinesForType (typeDeps : TypeDependencies) =
     let node = sprintf "%s [label = \"%s\" shape = \"%s\"];" srcName (s.Name |> dotFriendly) shape
     node :: edges
 
+let getModuleTypes (m : ModuleDefinition) = 
+  m.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
+
+let getAssemblyTypes (assemblyPath : string) = 
+  let asm = AssemblyDefinition.ReadAssembly(assemblyPath)
+  let types = asm.Modules |> Seq.collect (fun m -> getModuleTypes m)
+  //let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
+  types
+
+
 [<EntryPoint>]
 let main argv = 
-    let dll = argv.[0]
-    let asm = AssemblyDefinition.ReadAssembly(dll)
-    let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
+    let modules = argv |> Seq.filter (fun it -> it.EndsWith(".dll") || it.EndsWith(".exe"))
+    let excludes = argv |> Seq.except modules |> Seq.filter (fun it -> it.StartsWith("!")) |> Seq.map (fun it -> it.Substring(1))
+
+//    let asm = AssemblyDefinition.ReadAssembly(dll)
+//    let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
+    let exclude (t : TypeDefinition) : bool =
+      (excludes |> Seq.contains t.Name) || (excludes |> Seq.contains t.FullName)
+    let types = modules |> Seq.collect (fun dll -> getAssemblyTypes dll) |> Seq.filter (fun t -> not (exclude t))
 
     //types |> Seq.iter (fun typeDef -> printfn "%A" typeDef.Name; typeDef.CustomAttributes |> Seq.iter (fun attr -> printfn "  -> %A" attr.AttributeType.Name))
     let allClasses = types |> Seq.filter (fun typeDef -> typeDef.IsClass) |> Seq.toList
