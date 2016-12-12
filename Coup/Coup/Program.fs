@@ -1,4 +1,6 @@
-﻿open Mono.Cecil
+﻿open System
+
+open Mono.Cecil
 open Mono.Cecil.Cil
 
 type EdgeKind = Calls | Implements | Inherits | Offers | Accepts | Returns | Holds | Annotates | Exposes | Creates
@@ -22,7 +24,6 @@ type TypeDependencies =
 let rec typesFromTypeReference (typeRef : TypeReference) : TypeReference list = 
   match typeRef with
      | :? GenericInstanceType as genericInstanceType -> 
-       // printfn "generic instance type with element type %s" genericInstanceType.ElementType.FullName
        let gen = 
          if genericInstanceType.HasGenericArguments then
            genericInstanceType.GenericArguments |> Seq.filter (fun arg -> not arg.IsGenericParameter) |> Seq.collect (fun arg -> arg |> typesFromTypeReference) |> Seq.toList
@@ -34,7 +35,6 @@ let rec typesFromTypeReference (typeRef : TypeReference) : TypeReference list =
        // Unwrap array
        typesFromTypeReference arrayType.ElementType
      | :? TypeDefinition as typeDefinition ->
-       //printfn "type definition"
        [ typeRef ]
      | _ ->
        [ typeRef ]
@@ -188,23 +188,17 @@ let getModuleTypes (m : ModuleDefinition) =
 
 let getAssemblyTypes (assemblyPath : string) = 
   let asm = AssemblyDefinition.ReadAssembly(assemblyPath)
-  let types = asm.Modules |> Seq.collect (fun m -> getModuleTypes m)
-  //let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
-  types
-
+  asm.Modules |> Seq.collect (fun m -> getModuleTypes m)
 
 [<EntryPoint>]
 let main argv = 
     let modules = argv |> Seq.filter (fun it -> it.EndsWith(".dll") || it.EndsWith(".exe"))
     let excludes = argv |> Seq.except modules |> Seq.filter (fun it -> it.StartsWith("!")) |> Seq.map (fun it -> it.Substring(1))
 
-//    let asm = AssemblyDefinition.ReadAssembly(dll)
-//    let types = asm.MainModule.Types |> Seq.filter (fun typeDef -> not <| typeDef.FullName.Equals("<Module>"))
     let exclude (t : TypeDefinition) : bool =
       (excludes |> Seq.contains t.Name) || (excludes |> Seq.contains t.FullName)
     let types = modules |> Seq.collect (fun dll -> getAssemblyTypes dll) |> Seq.filter (fun t -> not (exclude t))
 
-    //types |> Seq.iter (fun typeDef -> printfn "%A" typeDef.Name; typeDef.CustomAttributes |> Seq.iter (fun attr -> printfn "  -> %A" attr.AttributeType.Name))
     let allClasses = types |> Seq.filter (fun typeDef -> typeDef.IsClass) |> Seq.toList
     let genClasses = allClasses |> Seq.filter (fun typeDef -> typeDef.HasCustomAttributes && typeDef.CustomAttributes |> Seq.exists (fun a -> a.AttributeType.Name = "CompilerGeneratedAttribute"))
     let enums = types |> Seq.filter (fun typeDef -> typeDef.IsEnum) |> Seq.toList
@@ -214,25 +208,8 @@ let main argv =
     let typeList = classes @ interfaces @ enums
     let typeNames = typeList |> List.map (fun t -> t.FullName)
 
-//    printfn "Classes"
-//    printfn "-------"
-//    classes |> Seq.iter (fun it -> printfn "%s" it.Name)
-//    printfn ""
-//
-//    printfn "Interfaces"
-//    printfn "----------"
-//    interfaces |> Seq.iter (fun it -> printfn "%s" it.Name)
-//    printfn ""
-//
-//    printfn "Enums"
-//    printfn "-----"
-//    enums |> Seq.iter (fun it -> printfn "%s" it.Name)
-//    printfn ""
-
     let classTypeDependencies = classes |> Seq.map (fun cd -> typesReferredByClass cd) |> Seq.toList
-
     let interfaceTypeDependencies = interfaces |> Seq.map (fun def -> typesReferredByInterface def) |> Seq.toList
-
     let enumTypeDependencies = enums |> Seq.map (fun def -> { source = def; dependencies = [] }) |> Seq.toList
 
     let formatWeightedKind wk = 
@@ -243,8 +220,6 @@ let main argv =
       classTypeDependencies 
       |> List.map (fun { source = s; dependencies = deps } -> { source = s; dependencies = deps |> List.filter (fun d -> typeNames |> List.contains d.target.FullName) |> List.filter (fun d -> not (d.target.FullName.Equals(s.FullName)) ) })
 
-    //filteredClassTypeDependencies |> List.iter (fun it -> printfn "class type definition: %A" it.source; it.dependencies |> List.iter (fun d -> printfn " -> %s %A" d.target.FullName (d.kinds |> List.map (fun k -> formatWeightedKind k))))
-
     let filteredInterfaceTypeDependencies = 
       interfaceTypeDependencies 
       |> List.map (fun { source = s; dependencies = deps } -> { source = s; dependencies = deps |> List.filter (fun d -> typeNames |> List.contains d.target.FullName) |> List.filter (fun d -> not (d.target.FullName.Equals(s.FullName)) ) })
@@ -253,9 +228,8 @@ let main argv =
     let lines = allTypeDeps |> List.collect (fun typeDef -> typeDef |> getLinesForType)
     let indentedLines = lines |> List.map (fun line -> sprintf "  %s" line)
     let oneBigLine = indentedLines |> String.concat "\n"
-    let graph = sprintf "digraph g {\n%s}" oneBigLine
+    let allLines = "digraph g {" :: (indentedLines @ [ "}" ])
+    let graph = allLines |> String.concat Environment.NewLine
     printfn "%s" graph
 
-    //filteredInterfaceTypeDependencies |> List.iter (fun it -> printfn "interface type definition: %A" it.source; it.dependencies |> List.iter (fun d -> printfn " -> %s %A" d.target.FullName (d.kinds |> List.map (fun k -> formatWeightedKind k))))
-
-    0 // return an integer exit code
+    0
