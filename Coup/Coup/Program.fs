@@ -3,6 +3,8 @@
 open Mono.Cecil
 open Mono.Cecil.Cil
 
+open Chiron
+
 type EdgeKind = Calls | Implements | Inherits | Offers | Accepts | Returns | Holds | Annotates | Exposes | Creates
 
 type DependencyEdge = 
@@ -20,6 +22,30 @@ type TargetDependency =
 type TypeDependencies =
   { source : TypeDefinition
     dependencies : TargetDependency list }
+
+type GraphElement = 
+  { name: string
+    ``namespace``: string }
+
+  static member ToJson (x : GraphElement) = json {
+    do! Json.write "name" x.name
+    do! Json.write "namespace" x.``namespace``
+  }
+
+type GraphNode = 
+  { source: GraphElement
+    edges: GraphEdge list }
+ 
+  static member ToJson (x : GraphNode) = json {
+    do! Json.write "source" x.source
+    do! Json.write "edges" x.edges
+}
+and GraphEdge = 
+  { target: GraphElement }
+  
+  static member ToJson (x : GraphEdge) = json {
+    do! Json.write "target" x.target
+  } 
 
 let rec typesFromTypeReference (typeRef : TypeReference) : TypeReference list = 
   match typeRef with
@@ -231,5 +257,21 @@ let main argv =
     let allLines = "digraph g {" :: (indentedLines @ [ "}" ])
     let graph = allLines |> String.concat Environment.NewLine
     printfn "%s" graph
+
+    let toGraphElement (typeDef : TypeDefinition) : GraphElement = 
+      { name = typeDef.Name 
+        ``namespace`` = typeDef.Namespace }
+
+    let toEdge (d : TargetDependency) : GraphEdge = 
+      { target = { name = d.target.Name; ``namespace`` = d.target.Namespace } }
+
+    let toEdges (deps : TargetDependency list) : GraphEdge list = 
+      deps |> List.map toEdge
+      
+    let nodes = allTypeDeps |> List.map (fun { source = s; dependencies = ds } -> { source = toGraphElement s; edges = toEdges ds })
+
+    let json = nodes |> Json.serialize |> Json.formatWith JsonFormattingOptions.Compact
+
+    //printfn "%s" json
 
     0

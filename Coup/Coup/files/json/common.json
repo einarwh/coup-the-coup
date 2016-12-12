@@ -1,0 +1,3775 @@
+[
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Compare",
+      "namespace": ""
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IoCBase",
+      "namespace": "Nrk.Programspiller.Common"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "EmbeddedResourceManager",
+      "namespace": "Nrk.Programspiller.Common"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Convert",
+      "namespace": "Nrk.Programspiller.Common"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IIpChecker",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "IpInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "AkamaiStatus",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "AkamaiPackageConverter",
+          "namespace": "Nrk.Programspiller.Common.Managers"
+        }
+      }
+    ],
+    "source": {
+      "name": "IpCheckerEdgeScape",
+      "namespace": "Nrk.Programspiller.Common.Repository"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "INrkPerformanceCounter",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "NrkPerformanceCounter",
+      "namespace": "Nrk.Programspiller.Common.Repository"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IMediaAssetUrlProvider",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "IIpChecker",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "EnvironmentHelper",
+          "namespace": "Nrk.Programspiller.Common.Config"
+        }
+      }
+    ],
+    "source": {
+      "name": "DefaultNrkRegistry",
+      "namespace": "Nrk.Programspiller.Common.Registry"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NowNextElementViewModel",
+      "namespace": "Nrk.Programspiller.Common.Models"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Subtitle",
+      "namespace": "Nrk.Programspiller.Common.Models"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "INowNextElementViewModelCreator",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "LiveElement",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "NowNextElementViewModel",
+          "namespace": "Nrk.Programspiller.Common.Models"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "NowNextElementViewModelCreator",
+      "namespace": "Nrk.Programspiller.Common.ModelCreators"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "MessageTransport",
+      "namespace": "Nrk.Programspiller.Common.Messages"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "RequestValidatedMessage",
+      "namespace": "Nrk.Programspiller.Common.Messages"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "AkamaiPackageConverter",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IClientIpLookupManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "ConversionExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "ClientIpLookupManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IDateTimeWrapper",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "DateTimeWrapper",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IFirstTimeSentAndNextTimeTransmissionInfo",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Transmission",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "DomainTools",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ApprootHelper",
+          "namespace": "Nrk.Programspiller.Common.Config"
+        }
+      }
+    ],
+    "source": {
+      "name": "EdgescapeInitializer",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "GoogleSearchConstants",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IHttpContextHeaderManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "HttpContextHeaderManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NxLogInitializer",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IPlayerStatisticsScriptManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "IScoresStreaming",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAnalytics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ScoresStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramEpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "ConvivaStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "GoogleAnalyticsStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "PlayerStatisticsScriptManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IPosterManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "PosterType",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Transmission",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "PosterManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IDurationCounter",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "NrkPerformanceCounter",
+          "namespace": "Nrk.Programspiller.Common.Repository"
+        }
+      },
+      {
+        "target": {
+          "name": "INrkPerformanceCounter",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "DurationCounter",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IScoresStreaming",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "ScoresStreaming",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "SentenceBuilder",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ITableStoreKeyManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "TableStoreKeyManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Utc",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IVersionInfoManager",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "VersionInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.Ping"
+        }
+      }
+    ],
+    "source": {
+      "name": "VersionInfoManager",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IWebRequester",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "WebRequester",
+      "namespace": "Nrk.Programspiller.Common.Managers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "DateRangeValidator",
+      "namespace": "Nrk.Programspiller.Common.Managers.Validators"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "StringNullOrEmptyException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "InvalidEnumException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "EnumValidator`1",
+      "namespace": "Nrk.Programspiller.Common.Managers.Validators"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IEnableCedexisConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      }
+    ],
+    "source": {
+      "name": "CedexisChecker",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "ChannelHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "MurmurHash3Size32",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      }
+    ],
+    "source": {
+      "name": "ConsistentHashNodeResolver`1",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "MediaElementHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IEnableCedexisConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "EnableCedexisConfig",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ICedexisOpenMixConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      }
+    ],
+    "source": {
+      "name": "CedexisOpenMixConfig",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "LiveBufferHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IMediaAssetUrlProvider",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "ICedexisRequester",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "ICedexisOpenMixConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsBase",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsOnDemand",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaElementHelper",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "MediaAssetUrlProvider",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "MurmurHash3Size32",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ProgramHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "RelativeTimeTypeHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ICedexisRequester",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "ICedexisOpenMixConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsLive",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "EnableCedexisConfig",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      },
+      {
+        "target": {
+          "name": "CedexisChecker",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      },
+      {
+        "target": {
+          "name": "IEnableCedexisConfig",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "SmilUrlLiveProvider",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Title",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "TitlesHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IUrlPathGenerator",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "UrlPathGenerator",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "UrlRoutingPatterns",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IBroadcastingDate",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      },
+      {
+        "target": {
+          "name": "IDateTimeWrapper",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "BroadcastingDate",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "UserDataHelper",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Utils",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListType",
+          "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+        }
+      },
+      {
+        "target": {
+          "name": "InvalidListTypeException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "InvalidMediumException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "InvalidNumberException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "WrongArgumentException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "ConversionExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Platform",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "Extensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "FluentCombineHashcode",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "LegalAge",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "LegalAgeExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ListExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ObjectExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "TaskExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "XmlExtensions",
+      "namespace": "Nrk.Programspiller.Common.Extensions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ProgramListObject",
+          "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+        }
+      },
+      {
+        "target": {
+          "name": "Convert",
+          "namespace": "Nrk.Programspiller.Common"
+        }
+      }
+    ],
+    "source": {
+      "name": "AggregatedStatistic",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PlaybackToken",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "CategoryChannel",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ChannelIds",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "RedisDbEnum",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ConvivaStatistics",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "GoogleAnalyticsStatistics",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Creator",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "MediaAnalytics",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "LiveElement",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Platform",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "PromoImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsLive",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "Channel",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Contributor",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PodcastElement",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ScoresStatistics",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "HealthCheckFunction",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "ServiceStatus",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "SubtitleLanguageCode",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "PosterType",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      }
+    ],
+    "source": {
+      "name": "TextArticleIds",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Contributor",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "IndexPoint",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Universe",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "AkamaiStatus",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Category",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "DeliveryStatus",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "DeliveryPackage`1",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "DeliveryStatus",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "HealthCheckFunction",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "LegalAge",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "MentionedList",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Month",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "Season",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ProgramImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Season",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Url",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "LegalAge",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Contributor",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "Series",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "TextArticle",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "TextArticleReference",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "Transmission",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Url",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "SearchParams",
+      "namespace": "Nrk.Programspiller.Common.Domain.Search"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "VersionInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.Ping"
+        }
+      }
+    ],
+    "source": {
+      "name": "PingAssemblyVersionInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.Ping"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "VersionInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.Ping"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IpInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PosterType",
+      "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "DateRangeValidator",
+          "namespace": "Nrk.Programspiller.Common.Managers.Validators"
+        }
+      },
+      {
+        "target": {
+          "name": "FluentCombineHashcode",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "OnDemandUsageRights",
+      "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Plug",
+          "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+        }
+      }
+    ],
+    "source": {
+      "name": "PlugExtraMaterial",
+      "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Title",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "PromoImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "Url",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "Plug",
+      "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Plug",
+          "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "PlugEpisode",
+      "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Plug",
+          "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+        }
+      }
+    ],
+    "source": {
+      "name": "PlugProgram",
+      "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Plug",
+          "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+        }
+      }
+    ],
+    "source": {
+      "name": "PlugSeries",
+      "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IndexElement",
+          "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+        }
+      }
+    ],
+    "source": {
+      "name": "CategoryIndexElement",
+      "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ProgramImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "IndexElement",
+      "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "LetterElement",
+      "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IndexElement",
+          "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramIndexElement",
+      "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IndexElement",
+          "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+        }
+      }
+    ],
+    "source": {
+      "name": "SeriesIndexElement",
+      "namespace": "Nrk.Programspiller.Common.Domain.IndexElement"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "TextArticle",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "PosterType",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      }
+    ],
+    "source": {
+      "name": "Availability",
+      "namespace": "Nrk.Programspiller.Common.Domain.Player"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "BitrateInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.Player"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      }
+    ],
+    "source": {
+      "name": "MediaAssetsBase",
+      "namespace": "Nrk.Programspiller.Common.Domain.Player"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "MediaAssetsBase",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      }
+    ],
+    "source": {
+      "name": "MediaAssetsLive",
+      "namespace": "Nrk.Programspiller.Common.Domain.Player"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "MediaAssetsBase",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "FluentCombineHashcode",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "MediaAssetsOnDemand",
+      "namespace": "Nrk.Programspiller.Common.Domain.Player"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Package",
+          "namespace": "Nrk.Programspiller.Common.Domain.Package"
+        }
+      }
+    ],
+    "source": {
+      "name": "PackageList",
+      "namespace": "Nrk.Programspiller.Common.Domain.Package"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "PackageSection",
+          "namespace": "Nrk.Programspiller.Common.Domain.Package"
+        }
+      }
+    ],
+    "source": {
+      "name": "Package",
+      "namespace": "Nrk.Programspiller.Common.Domain.Package"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "PackageItem",
+          "namespace": "Nrk.Programspiller.Common.Domain.Package"
+        }
+      }
+    ],
+    "source": {
+      "name": "PackageSection",
+      "namespace": "Nrk.Programspiller.Common.Domain.Package"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Url",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "PackageItem",
+      "namespace": "Nrk.Programspiller.Common.Domain.Package"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Url",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "PromoImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramListObject",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ProgramListObject",
+          "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramListObjectComparer",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ListType",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PopularListEnum",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ImageSize",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "WebImagePixelWidth",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ImageInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "WebImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "ImageSize",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "ImageSizes",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "FluentCombineHashcode",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "CdnImage",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ImageCropInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ImageFormat",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ImageCropInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "ImageFormat",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "ImageInfo",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramImage",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "WebImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "PromoImage",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ImageSize",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "ImageSizes",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "WebImage",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ProgramEpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "EpgEntryNoTransmission",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "EventEpgEntry",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      }
+    ],
+    "source": {
+      "name": "CompoundTransmission",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "EpgChannelGroup",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Epg",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "DistrictEpg",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "EpgEntryNoTransmission",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      }
+    ],
+    "source": {
+      "name": "Epg",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "PromoImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsLive",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "CdnImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "EpgEntry",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Epg",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      }
+    ],
+    "source": {
+      "name": "ErrorEpg",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "LegalAge",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramEpgEntry",
+      "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      }
+    ],
+    "source": {
+      "name": "DeviceCookie",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "DeviceFlags",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "DeviceCapabilityOverride",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "DeviceOperatingSystemCapabilityMatch",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceCapabilityOverride",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "DeviceCapabilityMatch",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "DeviceCapabilityOverride",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      }
+    ],
+    "source": {
+      "name": "DeviceOperatingSystemCapabilityMatch",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceFlags",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "DeviceData",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "BitRateType",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "LastSeen",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      },
+      {
+        "target": {
+          "name": "Favorite",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      },
+      {
+        "target": {
+          "name": "UserNotification",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      }
+    ],
+    "source": {
+      "name": "ProgramUserData",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ProgramVerification",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "SeriesVerification",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Series",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Transmission",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "Episode",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "ExtraMaterial",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IFirstTimeSentAndNextTimeTransmissionInfo",
+          "namespace": "Nrk.Programspiller.Common.Interfaces"
+        }
+      },
+      {
+        "target": {
+          "name": "Title",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "Contributor",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Transmission",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "LegalAge",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Url",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "IndexPoint",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsOnDemand",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramUserData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Subtitle",
+          "namespace": "Nrk.Programspiller.Common.Models"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "ListExtensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      },
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Series",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "DomainTools",
+          "namespace": "Nrk.Programspiller.Common.Managers"
+        }
+      }
+    ],
+    "source": {
+      "name": "Program",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "TitleType",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "Title",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "TitleType",
+      "namespace": "Nrk.Programspiller.Common.Domain.Program"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NrkDatabaseConnectionException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidCategoryException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidChannelException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidListTypeException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidMediumException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidNumberException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidPackageIdException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidPlatformException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      },
+      {
+        "target": {
+          "name": "Extensions",
+          "namespace": "Nrk.Programspiller.Common.Extensions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidProgramIdException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NrkDatabaseException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NrkIndexingException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NrkWarningException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "NrkWarningException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "WrongArgumentException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "InvalidArgumentException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "InvalidEnumException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "InvalidArgumentException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "NrkWebException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "InvalidArgumentException",
+          "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+        }
+      }
+    ],
+    "source": {
+      "name": "StringNullOrEmptyException",
+      "namespace": "Nrk.Programspiller.Common.Domain.Exceptions"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Favorite",
+      "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "LastSeen",
+      "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Favorite",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      },
+      {
+        "target": {
+          "name": "LastSeen",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramListObject",
+          "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+        }
+      }
+    ],
+    "source": {
+      "name": "PersonalizedProgram",
+      "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "PersonalizedProgram",
+          "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+        }
+      }
+    ],
+    "source": {
+      "name": "UserNotification",
+      "namespace": "Nrk.Programspiller.Common.Domain.Personalisation"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "CedexisHost",
+      "namespace": "Nrk.Programspiller.Common.Domain.Cedexis"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CedexisHost",
+          "namespace": "Nrk.Programspiller.Common.Domain.Cedexis"
+        }
+      }
+    ],
+    "source": {
+      "name": "CedexisHostList",
+      "namespace": "Nrk.Programspiller.Common.Domain.Cedexis"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramListObject",
+          "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+        }
+      },
+      {
+        "target": {
+          "name": "Episode",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "TitlesHelper",
+          "namespace": "Nrk.Programspiller.Common.Helpers"
+        }
+      },
+      {
+        "target": {
+          "name": "Plug",
+          "namespace": "Nrk.Programspiller.Common.Domain.Plug"
+        }
+      },
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ExtraMaterial",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "ToProgramListObjectConverter",
+      "namespace": "Nrk.Programspiller.Common.Converters"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ApprootHelper",
+      "namespace": "Nrk.Programspiller.Common.Config"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "EnvironmentHelper",
+      "namespace": "Nrk.Programspiller.Common.Config"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "OutputCacheDecorator",
+      "namespace": "Nrk.Programspiller.Common.Azure"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IEnumValidator`1",
+      "namespace": "Nrk.Programspiller.Common.Managers.Validators"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ICedexisOpenMixConfig",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "CedexisHostList",
+          "namespace": "Nrk.Programspiller.Common.Domain.Cedexis"
+        }
+      }
+    ],
+    "source": {
+      "name": "ICedexisRequester",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IEnableCedexisConfig",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IApiKeyValidator",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IClientIpLookupManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IDateTimeWrapper",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Transmission",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "IFirstTimeSentAndNextTimeTransmissionInfo",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IGluonStorageDb",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IHttpContextHeaderManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Category",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ProgramImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      },
+      {
+        "target": {
+          "name": "PromoImage",
+          "namespace": "Nrk.Programspiller.Common.Domain.Image"
+        }
+      }
+    ],
+    "source": {
+      "name": "IImageCreator",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "IpInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      }
+    ],
+    "source": {
+      "name": "IIpChecker",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "MediaAssetsBase",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAssetsOnDemand",
+          "namespace": "Nrk.Programspiller.Common.Domain.Player"
+        }
+      }
+    ],
+    "source": {
+      "name": "IMediaAssetUrlProvider",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "LiveElement",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "NowNextElementViewModel",
+          "namespace": "Nrk.Programspiller.Common.Models"
+        }
+      }
+    ],
+    "source": {
+      "name": "INowNextElementViewModelCreator",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "DeviceData",
+          "namespace": "Nrk.Programspiller.Common.Domain.Device"
+        }
+      },
+      {
+        "target": {
+          "name": "MediaAnalytics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "ScoresStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "EpgEntry",
+          "namespace": "Nrk.Programspiller.Common.Domain.Epg"
+        }
+      },
+      {
+        "target": {
+          "name": "ConvivaStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "GoogleAnalyticsStatistics",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "IPlayerStatisticsScriptManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IDurationCounter",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "PosterType",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "OnDemandUsageRights",
+          "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+        }
+      }
+    ],
+    "source": {
+      "name": "IPosterManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      },
+      {
+        "target": {
+          "name": "Universe",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "IScoresStreaming",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      }
+    ],
+    "source": {
+      "name": "ISmilUrlProvider",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ITableStoreKeyManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "Program",
+          "namespace": "Nrk.Programspiller.Common.Domain.Program"
+        }
+      },
+      {
+        "target": {
+          "name": "Channel",
+          "namespace": "Nrk.Programspiller.Common.Domain"
+        }
+      }
+    ],
+    "source": {
+      "name": "IUrlPathGenerator",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      {
+        "target": {
+          "name": "VersionInfo",
+          "namespace": "Nrk.Programspiller.Common.Domain.Ping"
+        }
+      }
+    ],
+    "source": {
+      "name": "IVersionInfoManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IWebRequester",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IPerfMonEventManager",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "INrkPerformanceCounter",
+      "namespace": "Nrk.Programspiller.Common.Interfaces"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "IBroadcastingDate",
+      "namespace": "Nrk.Programspiller.Common.Helpers"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "RedisDbEnum",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Platform",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "SubtitleLanguageCode",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Universe",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "AkamaiStatus",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "DeliveryStatus",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "Month",
+      "namespace": "Nrk.Programspiller.Common.Domain"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PosterType",
+      "namespace": "Nrk.Programspiller.Common.Domain.UsageRight"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ListType",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "PopularListEnum",
+      "namespace": "Nrk.Programspiller.Common.Domain.ListObject"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ImageSize",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "WebImagePixelWidth",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "ImageFormat",
+      "namespace": "Nrk.Programspiller.Common.Domain.Image"
+    }
+  },
+  {
+    "edges": [
+      
+    ],
+    "source": {
+      "name": "DeviceFlags",
+      "namespace": "Nrk.Programspiller.Common.Domain.Device"
+    }
+  }
+]
